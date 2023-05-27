@@ -24,3 +24,6 @@ nova_tabulka = tabulka[tabulka['DELKA_VYRIZENI_PODNETU'] < 365]
 g = sns.JointGrid(data=nova_tabulka, x='DELKA_VYRIZENI_PODNETU', y='DELKA_PODNETU')
 g.plot_joint(sns.scatterplot, color='red', legend=False)
 plt.show()
+
+data_hodnota_korelace = nova_tabulka[["DELKA_VYRIZENI_PODNETU", "DELKA_PODNETU"]]
+print(data_hodnota_korelace.corr())
